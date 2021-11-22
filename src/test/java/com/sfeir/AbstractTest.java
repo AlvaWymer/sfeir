@@ -7,11 +7,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
-//@RunWith(SpringRunner.class)
 @Transactional
-@TestPropertySource(
-    locations = "classpath:application-dev.yml")
+@SpringBootTest(properties = "spring.profiles.active:test")
 public abstract class AbstractTest {
     // TODO
 //    @BeforeEach

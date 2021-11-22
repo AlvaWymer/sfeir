@@ -1,0 +1,22 @@
+info:
+  baseUrl: http://localhost:8071
+spring:
+  # h2
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=create domain if not exists jsonb as text;MODE=PostgreSQL
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          batch_size: 20
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+        generate_statistics: true
+    hibernate:
+      ddl-auto: create-drop
