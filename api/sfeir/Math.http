@@ -1,12 +1,5 @@
 ### 1.3 Split array
-POST {{url}}/api/splitArrays/3
+POST {{url}}/calcul/ADD/1/3
 Content-Type: application/json;charset=UTF-8
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzOTA0MjU3OH0.HFOrGN1mFIKBMwi9LmTPFYGJBwAch8Oc0qR576xGW6YTTuI25PfLmuQFeaTdoLhm3dPe_PSDn_rYq24ZPXnO-g
 
-[
-  "1",
-  "2",
-  "3",
-  "4",
-  "5"
-]

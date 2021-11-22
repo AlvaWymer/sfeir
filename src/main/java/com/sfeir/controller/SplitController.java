@@ -1,12 +1,11 @@
 package com.sfeir.controller;
 
-import com.sfeir.service.ISplitArrayService;
+import com.sfeir.bean.MathOperation;
+import com.sfeir.bean.MathResult;
+import com.sfeir.service.IMathService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
 
 /**
  * @author Yang Naihua <br>
@@ -15,14 +14,25 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/api/splitArrays")
+@RequestMapping(value = "/calcul")
 public class SplitController {
     @Autowired
-    private ISplitArrayService splitArrayService;
+    private IMathService mathService;
 
-    @PostMapping(value = {"/{volume}"})
-    public List<List<Integer>> notifyDeparture(@RequestBody @Valid List<Integer> data, @PathVariable("volume") Integer volume) {
-        return splitArrayService.partition(data, volume);
+//    @PostMapping(value = {"/{operation}/{firstNumber}/{secondNumber}"})
+//    public Integer mathOperation(
+//            @PathVariable("operation") String operation,
+//            @PathVariable("firstNumber") Integer firstNumber,
+//            @PathVariable("secondNumber") Integer secondNumber) {
+//        return mathService.mathOperation(operation, firstNumber, secondNumber);
+//    }
+
+    @PostMapping(value = {"/{operation}/{firstNumber}/{secondNumber}"})
+    public MathResult mathOperationByObject(
+            @PathVariable("operation") MathOperation mathOperation,
+            @PathVariable("firstNumber") Integer firstNumber,
+            @PathVariable("secondNumber") Integer secondNumber) {
+        return mathService.mathOperationByObject(mathOperation, firstNumber, secondNumber);
     }
 }
 
