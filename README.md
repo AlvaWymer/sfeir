@@ -17,8 +17,9 @@
 ## Login client:
 - /sfeir/api/loginForClient.http
 
-# Split Array
-- /sfeir/api/splitArray.http
+[comment]: <> (# Split Array)
+
+[comment]: <> (- /sfeir/api/splitArray.http)
 
 
 ## 1.2 Tech:
